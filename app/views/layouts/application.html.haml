@@ -2,9 +2,21 @@
 %html
   %head
     %title Catalog
+    %meta(charset='utf-8')
+    %meta{:name => 'viewport', :content => 'width=device-width'}
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
   %body
-    = yield
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          .brand
+            = link_to 'Catalog', root_path
+    .container
+      .content
+        = yield
+      %footer
+        %p &copy; Company 2012
+
