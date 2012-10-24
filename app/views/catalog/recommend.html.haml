@@ -1,9 +1,7 @@
-%h1 商品カタログ
+%h1 おススメ商品
 - @products.each do |product|
   %h2
     = product.name
-  %p
-    = product.display_recommend
   %p
     = product.display_price
   %p
