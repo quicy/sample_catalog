@@ -1,4 +1,6 @@
 Catalog::Application.routes.draw do
+  root to: 'catalog#index'
+
   resources :shops
 
   resources :products
