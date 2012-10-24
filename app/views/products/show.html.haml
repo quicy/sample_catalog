@@ -6,13 +6,13 @@
 .description
   %p
     %b Description:
-    = simple_format(@product.description)
+    = @product.display_description
 %p.price
   %b Price:
-  = @product.price
+  = @product.display_price
 %p.image
   %b Image:
-  = image_tag(@product.image_url) if @product.image?
+  = @product.display_image
 
 = link_to 'Edit', edit_product_path(@product)
 
