@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @shop.name
+%p
+  %b Description:
+  = simple_format(@shop.description)
+%p
+  %b Lines summary:
+  = @shop.lines_summary
+%p
+  %b Image:
+  = image_tag(@shop.image_url) if @shop.image?
+
+= link_to 'Edit', edit_shop_path(@shop)
+\|
+= link_to 'Back', shops_path
