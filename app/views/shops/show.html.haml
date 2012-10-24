@@ -1,15 +1,16 @@
 %p#notice= notice
 
-%p
+%p.name
   %b Name:
   = @shop.name
-%p
-  %b Description:
-  = simple_format(@shop.description)
-%p
+.description
+  %p
+    %b Description:
+    = simple_format(@shop.description)
+%p.lines_summary
   %b Lines summary:
   = @shop.lines_summary
-%p
+%p.image
   %b Image:
   = image_tag(@shop.image_url) if @shop.image?
 

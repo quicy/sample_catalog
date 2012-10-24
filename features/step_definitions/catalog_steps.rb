@@ -34,3 +34,35 @@ end
     page.should have_content(product_price)
   end
 end
+
+
+前提 /^店舗管理ページを開いている$/ do
+  visit '/shops'
+end
+
+もし /^以下の内容で店舗情報を登録する:$/ do |table|
+  shop_info = table.hashes[0]
+  fill_in 'shop_name', with: shop_info['店舗名']
+  fill_in 'shop_description', with: shop_info['紹介分']
+  fill_in 'shop_lines_summary', with: shop_info['取扱商品概要']
+  click_on 'Save'
+end
+
+ならば /^"(.*?)"の店舗ページが作成されていること$/ do |shop_name|
+  visit url_for(Shop.where(name: shop_name).first)
+  within 'p.name' do
+    page.should have_content(shop_name)
+  end
+end
+
+ならば /^紹介分が"(.*?)"となっていること$/ do |shop_description|
+  within 'div.description' do
+    page.should have_content(shop_description)
+  end
+end
+
+ならば /^取扱商品概要が"(.*?)"となっていること$/ do |shop_lines_summary|
+  within 'p.lines_summary' do
+    page.should have_content(shop_lines_summary)
+  end
+end
