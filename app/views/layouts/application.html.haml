@@ -14,6 +14,8 @@
         .container
           .brand
             = link_to 'Catalog', root_path
+          %ul.nav
+            %li= link_to 'Recommend', recommend_path
     .container
       .content
         = yield

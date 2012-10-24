@@ -16,6 +16,9 @@
     = f.label :price
     = f.number_field :price
   .field
+    = f.label :recommend
+    = f.check_box  :recommend
+  .field
     = f.label :image
     = image_tag(@product.image_url) if @product.image?
     = f.file_field :image

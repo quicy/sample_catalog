@@ -13,4 +13,10 @@ module ProductDecorator
   def display_description
     simple_format(description)
   end
+
+  def display_recommend
+    if recommend then 'おススメ'
+    else ''
+    end
+  end
 end
